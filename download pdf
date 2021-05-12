@@ -1,0 +1,15 @@
+#Jupyter notebook download all computer science homework pdf assignment. I just want to save some time clicking so here it is. Also I realize that it is important to redo the hw after the semester is over.
+import urllib.request
+for i in range(1,70):
+    i= '%02d' % i # to make 1 become 01
+    hwlink = r"http://www.cs.angelo.edu/~gwilde1/CS1337/pdf/lab01.pdf"#put your homework link here 
+    location = r"C:\Users\huynh\ASU\2021fall\learn\cs2"#put your location folder here
+    
+    a = hwlink.find('.pdf')
+    hwlink[a-2:a]
+    try:
+        url = hwlink = hwlink[:a-2]+i+hwlink[a:]
+        foldername = location +"\lab{}.pdf".format(i)
+        urllib.request.urlretrieve(url, r"C:\Users\huynh\ASU\2021fall\learn\cs2\lab{}.pdf".format(i))
+    except:
+        print("lab {} is not available".format(i))
